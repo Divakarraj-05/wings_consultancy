@@ -654,25 +654,25 @@
                                     <span><img src="assets/img/icon/n_pad.svg" alt="">Contact Us</span>
                                     <h3>Do you have questions or need more <br> information?</h3>
                                 </div>
-                                <form class="xb-item--form contact-from" id="contactForm" action="#!">
+                                <form class="xb-item--form contact-from" id="contactForm" onsubmit="return handleSubmit(event);">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="xb-item--field">
                                                 <span><img src="assets/img/icon/c_user.svg" alt=""></span>
-                                                <input type="text" name="name" id="name" placeholder="Enter Name">
+                                                <input type="text" name="entry.2005620554" id="name" placeholder="Enter Name" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="xb-item--field">
                                                 <span><img src="assets/img/icon/c_mail.svg" alt=""></span>
-                                                <input type="text" name="email" id="email" placeholder="Enter Mail">
+                                                <input type="email" name="entry.1045781291" id="email" placeholder="Enter Mail" required>
                                             </div>
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="xb-item--field">
                                                 <span><img src="assets/img/icon/c_select.svg" alt=""></span>
-                                                <select name="select" id="nice-select">
-                                                    <option value="">Select Your Reason</option>
+                                                <select name="entry.1065046570" id="nice-select" required>
+                                                    <option value="n">Select Your Reason</option>
                                                     <option value="Student Visa">Student Visa</option>
                                                     <option value="Tourist Visa">Tourist Visa</option>
                                                     <option value="Working Visa">Working Visa</option>
@@ -682,14 +682,13 @@
                                         <div class="col-lg-6">
                                             <div class="xb-item--field">
                                                 <span><img src="assets/img/icon/c_call.svg" alt=""></span>
-                                                <input type="text" name="phone" id="phone" placeholder="Enter Contact Number">
+                                                <input type="text" name="entry.1166974658" id="phone" placeholder="Enter Contact Number" required>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="xb-item--field">
                                                 <span><img src="assets/img/icon/c_message.svg" alt=""></span>
-                                                <textarea name="message" id="message" cols="30" rows="10"
-                                                          placeholder="Write Your Message..."></textarea>
+                                                <textarea name="entry.839337160" id="message" cols="30" rows="10" placeholder="Write Your Message..." required></textarea>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -802,6 +801,63 @@
     <!-- footer start -->
 </div>
 <!-- jquery include -->
+
+<script type="text/javascript">
+    async function handleSubmit(event) {
+        event.preventDefault();
+        let isValid = validateForm();
+        if (!isValid) return false;
+        const formData = new FormData(document.getElementById('contactForm'));
+        try {
+            const response = await fetch("https://docs.google.com/forms/d/e/1FAIpQLSeX1CnTc3c7M6u2dyPKMqn66_wiH7uUTeU4F1xmzAoAOzAkaQ/formResponse", {
+                method: "POST",
+                body: formData,
+                mode: "no-cors"
+            });
+        } catch (error) {
+            alert("There was an error submitting the form. Please try again."+error);
+        }
+        alert("Form submitted successfully!");
+        window.location.reload();
+    }
+    function validateForm() {
+        let isValid = true;
+        let errorMessage = '';
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const reason = document.getElementById('nice-select').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+        if (name === '') {
+            errorMessage += 'Name is required.\n';
+            isValid = false;
+        }
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === '') {
+            errorMessage += 'Email is required.\n';
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            errorMessage += 'Please enter a valid email.\n';
+            isValid = false;
+        }
+        if (reason === 'n') {
+            errorMessage += 'Please select a reason.\n';
+            isValid = false;
+        }
+        if (phone === '') {
+            errorMessage += 'Phone number is required.\n';
+            isValid = false;
+        }
+        if (message === '') {
+            errorMessage += 'Message is required.\n';
+            isValid = false;
+        }
+        if (!isValid) {
+            alert(errorMessage);
+        }
+        return isValid; 
+    }
+</script>
 <script src="assets/js/jquery-3.7.1.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/swiper.min.js"></script>
