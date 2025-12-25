@@ -71,6 +71,13 @@
 :root {
   scroll-behavior: auto; }
 
+  @font-face {
+    font-family: 'Carbon Black';
+    src: url('assets/fonts/carbonblack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 html {
   scroll-behavior: smooth; }
 
