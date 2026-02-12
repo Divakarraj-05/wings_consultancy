@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Wings Consultancy</title>
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="images/x-icon"/>
+    <link rel="shortcut icon" href="assets/img/fav.jpg" type="images/x-icon"/>
     <!-- css include -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fontawesome.css">
@@ -38,6 +38,49 @@
             border: 3px solid #ccc;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
+
+        #main_new {
+    position: relative;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: heroSlider 20s infinite;
+}
+
+/* Dark overlay (optional but recommended for text visibility) */
+#main_new::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+#main_new .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Background animation */
+@keyframes heroSlider {
+    0% {
+        background-image: url('assets/img/bg/hero_bg.jpg');
+    }
+    25% {
+        background-image: url('assets/img/bg/hero_bg-2.jpg');
+    }
+    50% {
+        background-image: url('assets/img/bg/hero_bg-3.jpg');
+    }
+    75% {
+        background-image: url('assets/img/bg/hero_bg.jpg');
+    }
+    100% {
+        background-image: url('assets/img/bg/hero_bg-2.jpg');
+    }
+}
+
     </style>
 </head>
 <body>
@@ -203,7 +246,7 @@
     <div class="body-overlay"></div>
     <main>
         <!-- hero start -->
-        <section class="hero hero__style-one bg_img" data-background="assets/img/bg/hero_bg.jpg" id="main_new">
+        <section class="hero hero__style-one bg_img" id="main_new">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-lg-7">
@@ -359,7 +402,7 @@
                             <ul class="about-list ul_li list-unstyled">
                                 <li>
                                     <div class="xb-item--inner">
-                                        <div class="xb-item--number">1</div>
+                                        <div class="xb-item--number">★</div>
                                         <div class="xb-item--holder">
                                             <h3 class="xb-item--title mb-10">Coventry University</h3>
                                             <div class="xb-item--description">
@@ -370,7 +413,7 @@
                                 </li>
                                 <li>
                                     <div class="xb-item--inner">
-                                        <div class="xb-item--number color-2">2</div>
+                                        <div class="xb-item--number color-2">★</div>
                                         <div class="xb-item--holder">
                                             <h3 class="xb-item--title mb-10">Ravensbourne University</h3>
                                             <div class="xb-item--description">
@@ -381,7 +424,7 @@
                                 </li>
                                 <li>
                                     <div class="xb-item--inner">
-                                        <div class="xb-item--number color-3">3</div>
+                                        <div class="xb-item--number color-3">★</div>
                                         <div class="xb-item--holder">
                                             <h3 class="xb-item--title mb-10">University of
                                                 East london</h3>
@@ -393,7 +436,7 @@
                                 </li>
                                 <li>
                                     <div class="xb-item--inner">
-                                        <div class="xb-item--number color-4">4</div>
+                                        <div class="xb-item--number color-4">★</div>
                                         <div class="xb-item--holder">
                                             <h3 class="xb-item--title mb-10">University of Greenwich</h3>
                                             <div class="xb-item--description">
@@ -404,7 +447,7 @@
                                 </li>
                                 <li>
                                     <div class="xb-item--inner">
-                                        <div class="xb-item--number color-2">5</div>
+                                        <div class="xb-item--number color-2">★</div>
                                         <div class="xb-item--holder">
                                             <h3 class="xb-item--title mb-10">University of
                                                 Hertfordshire</h3>
@@ -416,7 +459,7 @@
                                 </li>
                                 <li>
                                     <div class="xb-item--inner">
-                                        <div class="xb-item--number color-3">6</div>
+                                        <div class="xb-item--number color-3">★</div>
                                         <div class="xb-item--holder">
                                             <h3 class="xb-item--title mb-10">University of Chester</h3>
                                             <div class="xb-item--description">
