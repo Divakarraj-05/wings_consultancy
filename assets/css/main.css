@@ -73,9 +73,32 @@
 
   @font-face {
     font-family: 'Carbon Black';
-    src: url('assets/fonts/carbonblack.ttf') format('truetype');
+    src: url('../fonts/carbonblack.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Carbon';
+    src: url('../fonts/carbonblack.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .brand-name {
+    font-family: 'Carbon Black', 'Carbon', sans-serif;
+    letter-spacing: 0.5px;
+    display: inline;
+  }
+  .brand-wings {
+    font-family: 'Carbon Black', 'Carbon', sans-serif;
+    color: #ed2124 !important;
+  }
+  .brand-consultancy {
+    font-family: 'Carbon Black', 'Carbon', sans-serif;
+    color: #008ac9 !important;
   }
 
 html {

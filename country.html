@@ -18,6 +18,193 @@
     <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/carbon-font.css">
+    <style>
+        /* Header Brand Logo & Text */
+        .header-brand-logo {
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 12px;
+            text-decoration: none !important;
+            flex-shrink: 0;
+        }
+        .header-logo-icon {
+            width: 65px;
+            height: auto;
+            max-height: 42px;
+            object-fit: contain;
+            display: block;
+            flex-shrink: 0;
+        }
+        .header-brand-text {
+            display: inline-flex !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            line-height: 1 !important;
+            text-align: left;
+        }
+        .header-brand-text .brand-wings {
+            font-family: 'Carbon', 'Carbon Black', sans-serif !important;
+            font-size: 25px !important;
+            line-height: 0.88 !important;
+            color: #ed2124 !important;
+            text-transform: uppercase !important;
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            letter-spacing: 0 !important;
+            width: 100% !important;
+        }
+        .header-brand-text .brand-consultancy {
+            font-family: 'Barlow Condensed', sans-serif !important;
+            font-weight: 700 !important;
+            color: #008ac9 !important;
+            display: block !important;
+            font-size: 13.5px !important;
+            line-height: 1 !important;
+            margin: 1px 0 0 0 !important;
+            padding: 0 !important;
+            text-align: right !important;
+            width: 100% !important;
+            text-transform: none !important;
+            letter-spacing: 0.35px !important;
+        }
+
+        /* Header Single Row Desktop Navigation */
+        .site-header .header__inner {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100%;
+        }
+        .site-header .header__logo {
+            flex-shrink: 0 !important;
+            margin-right: 25px;
+        }
+        .site-header .main-menu__wrap {
+            flex: 1 1 auto !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            min-width: 0;
+        }
+        .site-header .main-menu {
+            display: flex !important;
+            align-items: center !important;
+            flex-wrap: nowrap !important;
+        }
+        .site-header .main-menu > ul {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            white-space: nowrap !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        .site-header .main-menu > ul > li {
+            white-space: nowrap !important;
+            display: inline-block !important;
+            float: none !important;
+        }
+        .site-header .main-menu > ul > li:not(:last-child) {
+            margin-right: 18px !important;
+        }
+        .site-header .main-menu > ul > li > a {
+            padding: 35px 0 !important;
+            font-size: 14px !important;
+            white-space: nowrap !important;
+        }
+        .site-header .header__action {
+            flex-shrink: 0 !important;
+            margin-left: 15px !important;
+        }
+
+        /* Laptop / Tablet Landscape (992px - 1250px) - Compact Single Row */
+        @media (min-width: 992px) and (max-width: 1250px) {
+            .site-header .header__logo {
+                margin-right: 14px;
+            }
+            .header-logo-icon {
+                width: 52px;
+                max-height: 35px;
+            }
+            .header-brand-text .brand-wings {
+                font-size: 21.3px !important;
+            }
+            .header-brand-text .brand-consultancy {
+                font-size: 9.7px !important;
+            }
+            .site-header .main-menu > ul > li:not(:last-child) {
+                margin-right: 11px !important;
+            }
+            .site-header .main-menu > ul > li > a {
+                font-size: 13.5px !important;
+                padding: 30px 0 !important;
+            }
+            .site-header .main-menu ul li.menu-item-has-children > a span::after {
+                padding-left: 6px !important;
+            }
+            .site-header .header__action {
+                margin-left: 8px !important;
+            }
+        }
+
+        /* Tablet Portrait & Mobile (< 992px) */
+        @media (max-width: 991px) {
+            .site-header .header__inner {
+                padding: 12px 0;
+            }
+            .site-header .main-menu__wrap {
+                display: none !important;
+            }
+            .site-header .xb-hamburger-menu {
+                display: flex !important;
+                align-items: center;
+                margin-left: auto;
+                margin-right: 15px;
+                order: 2;
+            }
+            .site-header .header__action {
+                order: 3;
+                margin-left: 0 !important;
+            }
+            .site-header .header__logo {
+                order: 1;
+                margin-right: 0;
+            }
+            .header-logo-icon {
+                width: 48px;
+                max-height: 32px;
+            }
+            .header-brand-text .brand-wings {
+                font-size: 21.3px !important;
+            }
+            .header-brand-text .brand-consultancy {
+                font-size: 9.7px !important;
+            }
+        }
+
+        /* Small Mobile (< 480px) */
+        @media (max-width: 480px) {
+            .site-header .header-brand-logo {
+                gap: 8px;
+            }
+            .header-logo-icon {
+                width: 40px;
+                max-height: 28px;
+            }
+            .header-brand-text .brand-wings {
+                font-size: 18px !important;
+            }
+            .header-brand-text .brand-consultancy {
+                font-size: 8.5px !important;
+            }
+            .site-header .xb-hamburger-menu {
+                margin-right: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- backtotop - start -->
@@ -58,7 +245,13 @@
                 <div class="container">
                     <div class="header__inner ul_li_between">
                         <div class="header__logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.jpg" style="width: 117px; height: 38px; object-fit: fill;" alt=""></a>
+                            <a href="index.html" class="header-brand-logo">
+                                <img src="assets/img/logo/logo.jpg" alt="Logo" class="header-logo-icon">
+                                <span class="header-brand-text">
+                                    <span class="brand-wings">WINGS</span>
+                                    <span class="brand-consultancy">Consultancy</span>
+                                </span>
+                            </a>
                         </div>
                         <div class="main-menu__wrap ul_li navbar navbar-expand-lg">
                             <nav class="main-menu collapse navbar-collapse">
@@ -120,7 +313,14 @@
                     <div class="xb-header-menu-scroll">
                         <div class="xb-menu-close xb-hide-xl xb-close"></div>
                         <div class="xb-logo-mobile xb-hide-xl">
-                            <a href="index-2.html" rel="home"><img src="assets/img/logo/logo.jpg" style="width: 117px; height: 38px; object-fit: fill;" alt=""></a></div>
+                            <a href="index.html" rel="home" class="header-brand-logo">
+                                <img src="assets/img/logo/logo.jpg" alt="Logo" class="header-logo-icon">
+                                <span class="header-brand-text">
+                                    <span class="brand-wings">WINGS</span>
+                                    <span class="brand-consultancy">Consultancy</span>
+                                </span>
+                            </a>
+                        </div>
                         <div class="xb-header-mobile-search xb-hide-xl">
                             <form role="search" action="#">
                                 <input type="text" placeholder="Search..." name="s" class="search-field">
@@ -130,46 +330,34 @@
                         </div>
                         <nav class="xb-header-nav">
                             <ul class="xb-menu-primary clearfix">
+                                <li>
+                                    <a href="index.html"><span>Home</span></a>
+                                </li>
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="#"><span>Home</span></a>
+                                    <a href="#"><span>Get Advice for Queries in</span></a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item"><a href="index-2.html"><span>Immigration</span></a></li>
-                                        <li class="menu-item"><a href="home-studient-visa.html"><span>Studient Visa</span></a></li>
-                                        <li class="menu-item"><a href="home-travel-agency.html"><span>Travel Agency</span></a></li>
-                                        <li class="menu-item"><a href="home-rtl.html"><span>Demo RTL</span></a></li>
+                                        <li><a href="#contact"><span>Carrier Advice</span></a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item"><a href="country.html"><span>Find a course</span></a></li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#"><span>Study Desination</span></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="country.html"><span>Country</span></a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="#"><span>Pages</span></a>
+                                    <a href="#"><span>Our Services</span></a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item"><a href="services.html"><span>Services</span></a></li>
-                                        <li class="menu-item"><a href="service-single.html"><span>Service Details</span></a></li>
-                                        <li class="menu-item"><a href="coaching.html"><span>Coaching</span></a></li>
-                                        <li class="menu-item"><a href="coaching-single.html"><span>Coaching Details</span></a></li>
-                                        <li class="menu-item"><a href="visa.html"><span>Visa</span></a></li>
-                                        <li class="menu-item"><a href="visa-single.html"><span>Visa Details</span></a></li>
-                                        <li class="menu-item"><a href="team.html"><span>Team</span></a></li>
-                                        <li class="menu-item"><a href="team-single.html"><span>Team Details</span></a></li>
-                                        <li class="menu-item"><a href="testimonial.html"><span>Testimonials</span></a></li>
-                                        <li class="menu-item"><a href="faq.html"><span>FAQ</span></a></li>
+                                        <li><a href="#contact"><span>Exam Advice</span></a></li>
+                                        <li><a href="#contact"><span>Course Advice</span></a></li>
+                                        <li><a href="#contact"><span>Destination Advice</span></a></li>
+                                        <li><a href="index.html#main_new"><span>Admission Guidelines</span></a></li>
+                                        <li><a href="index.html#main_new"><span>Application Guidelines</span></a></li>
+                                        <li><a href="index.html#Visa"><span>Visa Guidelines</span></a></li>
                                     </ul>
                                 </li>
-                                <li class="menu-item"><a href="about.html"><span>About us</span></a></li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#"><span>Country</span></a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="country.html"><span>Country</span></a></li>
-                                        <li class="menu-item"><a href="country-single.html"><span>Country Details</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#"><span>Blog</span></a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="blog.html"><span>Blog</span></a></li>
-                                        <li class="menu-item"><a href="blog-single.html"><span>Blog Details</span></a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item"><a href="#contact"><span>Contact</span></a></li>
+                                <li><a href="#contact"><span>Contact</span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -476,7 +664,7 @@
             </div>
             <div class="footer__copyright ul_li_between">
                 <div class="footer__copyright-text mt-15">
-                    Copyright © 2025 Wings Consultancy All rights reserved.
+                    Copyright © 2025 Wings Consultancy. All rights reserved.
                 </div>
                 <div class="footer__copyright-img mt-20">
                 </div>
