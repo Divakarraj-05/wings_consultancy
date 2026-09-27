@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brand Lockup Test - Wings Consultancy</title>
+    <link rel="stylesheet" href="assets/css/carbon-font.css">
+    <style>
+        body {
+            background-color: #f1f5f9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 28px 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
+        }
+        .card-title {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #64748b;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .badge {
+            background: #e0f2fe;
+            color: #0284c7;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+        .lockup-box {
+            position: relative;
+            display: inline-block;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed #cbd5e1;
+        }
+        /* Vertical alignment indicator line */
+        .align-guide {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #22c55e;
+            right: 20px;
+            z-index: 10;
+            pointer-events: none;
+        }
+        .meas-box {
+            margin-top: 15px;
+            padding: 12px 16px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            font-size: 13px;
+            color: #0f172a;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .meas-item strong {
+            color: #0284c7;
+        }
+        .match-badge {
+            color: #16a34a;
+            font-weight: 700;
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 12px;
+            font-size: 13px;
+        }
+        .controls label {
+            font-weight: 600;
+        }
+        .controls input[type="range"] {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Reference Banner -->
+        <div class="card" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #fff;">
+            <div class="card-title" style="color: #94a3b8; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+                Reference Sticker Comparison
+                <span class="badge" style="background: rgba(34, 197, 94, 0.2); color: #4ade80;">100% Offline Agency FB Bold</span>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+                <div>
+                    <div style="font-size: 12px; color: #94a3b8; margin-bottom: 6px;">Original Printed Sticker Photo:</div>
+                    <img src="assets/img/logo/logo.jpg" alt="Logo" style="height: 50px; background: #fff; padding: 4px; border-radius: 6px; vertical-align: middle;">
+                </div>
+                <div style="font-size: 13px; color: #cbd5e1; line-height: 1.5; max-width: 450px;">
+                    ✔ <strong>Solid bold stroke</strong> matching ink weight in photo.<br>
+                    ✔ <strong>Flat non-curved joints</strong> on <code>c, o, s, a, y</code>.<br>
+                    ✔ <strong>Title-Case</strong>: Capital <code>C</code>, lowercase <code>onsultancy</code>.<br>
+                    ✔ <strong>0.00px right-edge alignment</strong> with WINGS.
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section Lockup -->
+        <div class="card">
+            <div class="card-title">
+                Hero Section Lockup (h1.hero-brand-title)
+                <span class="badge">Font: Carbon 104px | Agency FB Bold 61px (+1.0px stroke)</span>
+            </div>
+            <div class="lockup-box" id="hero-box">
+                <div class="align-guide" id="hero-guide"></div>
+                <div class="hero__content">
+                    <h1 class="hero-brand-title" id="hero-lockup">
+                        <span class="brand-wings" id="hw">WINGS</span>
+                        <span class="brand-consultancy" id="hc">Consultancy</span>
+                    </h1>
+                </div>
+            </div>
+            <div class="meas-box" id="hero-meas">
+                <div class="meas-item">WINGS width: <strong id="hw-w">--</strong></div>
+                <div class="meas-item">Consultancy width: <strong id="hc-w">--</strong></div>
+                <div class="meas-item">Difference: <span class="match-badge" id="h-diff">--</span></div>
+            </div>
+            <div class="controls">
+                <label for="hero-stroke-slider">Adjust Hero Stroke:</label>
+                <input type="range" id="hero-stroke-slider" min="0" max="2.0" step="0.1" value="1.0">
+                <span id="hero-stroke-val">1.0px</span>
+            </div>
+        </div>
+
+        <!-- Header Logo Lockup -->
+        <div class="card">
+            <div class="card-title">
+                Header Logo Lockup (.header-brand-logo)
+                <span class="badge">Font: Carbon 25px | Agency FB Bold 14.3px (+0.35px stroke)</span>
+            </div>
+            <div class="lockup-box" id="head-box">
+                <div class="align-guide" id="head-guide"></div>
+                <a href="#" class="header-brand-logo">
+                    <img src="assets/img/logo/logo.jpg" class="header-logo-icon" alt="Logo">
+                    <span class="header-brand-text" id="head-lockup">
+                        <span class="brand-wings" id="headw">WINGS</span>
+                        <span class="brand-consultancy" id="headc">Consultancy</span>
+                    </span>
+                </a>
+            </div>
+            <div class="meas-box" id="head-meas">
+                <div class="meas-item">WINGS width: <strong id="headw-w">--</strong></div>
+                <div class="meas-item">Consultancy width: <strong id="headc-w">--</strong></div>
+                <div class="meas-item">Difference: <span class="match-badge" id="head-diff">--</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateMeasurements() {
+            // Hero
+            const hw = document.getElementById('hw').getBoundingClientRect();
+            const hc = document.getElementById('hc').getBoundingClientRect();
+            document.getElementById('hw-w').textContent = hw.width.toFixed(2) + 'px';
+            document.getElementById('hc-w').textContent = hc.width.toFixed(2) + 'px';
+            const hDiff = (hc.width - hw.width).toFixed(2);
+            document.getElementById('h-diff').textContent = hDiff === '0.00' ? '0.00px (PERFECT FLUSH)' : hDiff + 'px';
+
+            // Header
+            const headw = document.getElementById('headw').getBoundingClientRect();
+            const headc = document.getElementById('headc').getBoundingClientRect();
+            document.getElementById('headw-w').textContent = headw.width.toFixed(2) + 'px';
+            document.getElementById('headc-w').textContent = headc.width.toFixed(2) + 'px';
+            const headDiff = (headc.width - headw.width).toFixed(2);
+            document.getElementById('head-diff').textContent = headDiff === '0.00' ? '0.00px (PERFECT FLUSH)' : headDiff + 'px';
+        }
+
+        document.fonts.ready.then(updateMeasurements);
+        window.addEventListener('resize', updateMeasurements);
+
+        // Interactive stroke slider for Hero
+        const slider = document.getElementById('hero-stroke-slider');
+        const strokeVal = document.getElementById('hero-stroke-val');
+        const hcElem = document.getElementById('hc');
+
+        slider.addEventListener('input', (e) => {
+            const val = parseFloat(e.target.value);
+            strokeVal.textContent = val.toFixed(1) + 'px';
+            if (val === 0) {
+                hcElem.style.webkitTextStroke = 'none';
+            } else {
+                hcElem.style.webkitTextStroke = val + 'px #008ac9';
+                hcElem.style.paintOrder = 'stroke fill';
+            }
+            updateMeasurements();
+        });
+    </script>
+</body>
+</html>
